@@ -14,7 +14,7 @@ time.sleep(1)
 protagonist_class = input('What class are you? You can choose warrior, priest, mage or thief!')
 
 power  = 0;
-
+  
 def class_strenght(power):
     if protagonist_class == 'warrior' or protagonist_class == 'Warrior':
         power = random.randint(10, 18)
@@ -30,3 +30,10 @@ def class_strenght(power):
         print('Your strenght is', power)
     else:
         print('Error')
+        
+#main functie toegevoegd. Eigenlijk moet er een main class met een main function. Dan lus van class naar classe en van function naar function.         
+def main():          
+        class_strenght(power)
+        
+main()        
+        
