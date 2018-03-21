@@ -11,10 +11,14 @@ time.sleep(1)
 print('Nice to meet you', protagonist_name,'!')
 time.sleep(1)
 #Class creation. 'Are you sure?'loop terug naar hier.
-protagonist_class = input('What class are you? You can choose warrior, priest, mage or thief!')
 
-power  = 0;
-  
+flag = 'no';
+while (flag == 'no'):
+    protagonist_class = input('What class are you? You can choose warrior, priest, mage or thief!')
+    flag = input('are you sure? Yes or No?')
+    print(flag.lower())  #kleine letter zodat flag werkt bij afwijking. 
+
+power  = 0; 
 def class_strenght(power):
     if protagonist_class == 'warrior' or protagonist_class == 'Warrior':
         power = random.randint(10, 18)
