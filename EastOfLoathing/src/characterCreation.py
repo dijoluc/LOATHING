@@ -22,16 +22,15 @@ class CharacterCreation(object):
         flag = 'no';
         while (flag == 'no'):
             protagonist_class = input('What class are you? You can choose warrior, priest, mage or thief!')
-            prot =  protagonist_class.lower()   
-            print(prot)
+            self.prot =  protagonist_class.lower()   
                 
-        while(prot !='warrior' and prot != 'priest' and prot != 'thief' and prot != 'mage'):
-            print('You did not pick a class, please try again') 
-            protagonist_class = input('What class are you? You can choose warrior, priest, mage or thief!') 
-            self.prot =  protagonist_class.lower()  
+            while(self.prot !='warrior' and self.prot != 'priest' and self.prot != 'thief' and self.prot != 'mage'):
+                print('You did not pick a class, please try again') 
+                protagonist_class = input('What class are you? You can choose warrior, priest, mage or thief!') 
+                self.prot =  protagonist_class.lower()  
          
-        print('are you sure you want to be a', protagonist_class)
-        flag = input('Yes or No?').lower()
+            print('are you sure you want to be a', protagonist_class)
+            flag = input('Yes or No?').lower()
 
     def class_strenght(self):
         
@@ -106,6 +105,9 @@ class CharacterCreation(object):
 
     def controller(self):
         self.charCreate()
-        self.class_strenght()  
+        self.class_strenght()
+        self.class_constitution()  
+        self.class_dexterity()
+        self.class_intelligence()
                    
 
