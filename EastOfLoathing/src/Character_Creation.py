@@ -43,8 +43,6 @@ def class_strenght(strength):
         strength = random.randint(4, 12)
         print('Your strenght is', strength)
         
-
-
 constitution  = 0; 
 def class_constitution(constitution):
     if prot == 'warrior': 
