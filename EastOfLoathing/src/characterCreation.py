@@ -9,6 +9,7 @@ class CharacterCreation(object):
     constitution  = 0; 
     dexterity  = 0;
     hitpoints  = 50; 
+    prot = ''
 
     def charCreate(self):
         protagonist_name = input('What is your name?')
@@ -27,12 +28,15 @@ class CharacterCreation(object):
         while(prot !='warrior' and prot != 'priest' and prot != 'thief' and prot != 'mage'):
             print('You did not pick a class, please try again') 
             protagonist_class = input('What class are you? You can choose warrior, priest, mage or thief!') 
-            prot =  protagonist_class.lower()  
+            self.prot =  protagonist_class.lower()  
          
         print('are you sure you want to be a', protagonist_class)
         flag = input('Yes or No?').lower()
 
     def class_strenght(self):
+        
+        prot = self.prot
+        
         if prot == 'warrior': 
             strength = random.randint(10, 18)
             print('Your strenght is', strength)
@@ -47,6 +51,9 @@ class CharacterCreation(object):
                 print('Your strenght is', strength)
         
     def class_constitution(self):
+        
+        prot = self.prot
+        
         if prot == 'warrior': 
             constitution = random.randint(10, 18)
             print('Your constitution is', constitution)
@@ -61,6 +68,9 @@ class CharacterCreation(object):
             print('Your constitution is', constitution)
         
     def class_dexterity(self):
+        
+        prot = self.prot
+        
         if prot == 'warrior': 
             dexterity = random.randint(6, 14)
             print('Your dexterity is', dexterity)
@@ -75,6 +85,8 @@ class CharacterCreation(object):
             print('Your dexterity is', dexterity)
         
     def class_intelligence(self):
+        prot = self.prot
+         
         if prot == 'warrior': 
             intelligence = random.randint(4, 12)
             print('Your intelligence is', intelligence)
@@ -90,7 +102,7 @@ class CharacterCreation(object):
 
     def starting_hitpoints(self):
         self.hitpoints += (self.constitution - 10) * 5
-        print('You have %s hitpoints' % hitpoints)
+        print('You have %s hitpoints' % self.hitpoints)
 
     def controller(self):
         self.charCreate()
