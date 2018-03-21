@@ -4,84 +4,103 @@ import random
 import time
 
 protagonist_name = input('What is your name?')
-print('My name is %s' % (protagonist_name))
+print('My name is', protagonist_name)
 
 
 time.sleep(1)
-print('Nice to meet you %s!' % (protagonist_name))
+print('Nice to meet you', protagonist_name,'!')
 time.sleep(1)
+
+
 #Class creation. 'Are you sure?'loop terug naar hier.
-print('Dont worry about choosing a race, there is only the *************** motherfuckers!')
 
-time.sleep(1)
-
-
-while True:
+flag = 'no';
+while (flag == 'no'):
     protagonist_class = input('What class are you? You can choose warrior, priest, mage or thief!')
-    if protagonist_class == 'warrior' or classchoice == 'priest' or classchoice == 'thief' or classchoice == 'mage':
-        time.sleep(1)
-        print('Good choice!')
-        break
-    else:
-        print('WRONG! PLease Try again!')
-        input('What class are you? You can choose warrior, priest, mage or thief!')
+    prot =  protagonist_class.lower()   
+    print(prot)
+                
+    while(prot !='warrior' and prot != 'priest' and prot != 'thief' and prot != 'mage'):
+        print('You did not pick a class, please try again') 
+        protagonist_class = input('What class are you? You can choose warrior, priest, mage or thief!') 
+        prot =  protagonist_class.lower()  
+         
+    print('are you sure you want to be a', protagonist_class)
+    flag = input('Yes or No?').lower()
 
-protagonist_class = '';
-
-classchoice = input('What class are you? You can choose warrior, priest, mage or thief!')
-classchoice = classchoice.lower()
-while classchoice != 'warrior' or classchoice != 'priest' or classchoice != 'thief' or classchoice != 'mage':
-    time.sleep(1)
-    print('WRONG! PLease Try again!')
-    input('What class are you? You can choose warrior, priest, mage or thief!')
-    protagonist_class.append(classchoice)
-else:
-    time.sleep(1)
-    print('Good choice!')
-    protagonist_class.append(classchoice)
-    
-strength  = 0;
-  
-def class_strength(strength):
-    if classchoice == 'warrior':
+strength  = 0; 
+def class_strenght(strength):
+    if prot == 'warrior': 
         strength = random.randint(10, 18)
-        print('Your strength is %s' % (strength))
-    elif classchoice == 'priest':
+        print('Your strenght is', strength)
+    elif prot == 'priest':
         strength = random.randint(8, 16)
-        print('Your strength is  %s' % (strength))
-    elif classchoice == 'thief':
+        print('Your strenght is', strength)
+    elif prot == 'thief': 
         strength = random.randint(6, 14)
-        print('Your strength is %s' % (strength))
-    elif classchoice == 'mage':
+        print('Your strenght is', strength)
+    else:
         strength = random.randint(4, 12)
-        print('Your strength is %s' % (strength))
-    else:
-        print('Try again')
-        print(classchoice)
+        print('Your strenght is', strength)
         
-constitution  = 0;
-  
+
+
+constitution  = 0; 
 def class_constitution(constitution):
-    if protagonist_class == 'warrior':
+    if prot == 'warrior': 
         constitution = random.randint(10, 18)
-        print('Your constitution is %s' % (constitution))
-    elif protagonist_class == 'priest':
-        constitution = random.randint(8, 16)
-        print('Your constitution is  %s' % (constitution))
-    elif protagonist_class == 'thief':
-        constitution = random.randint(6, 14)
-        print('Your constitution is %s' % (constitution))
-    elif protagonist_class == 'mage':
-        constitution = random.randint(4, 12)
-        print('Your constitution is %s' % (constitution))
+        print('Your constitution is', constitution)
+    elif prot == 'priest':
+        constitution = random.randint(10, 18)
+        print('Your constitution is', constitution)
+    elif prot == 'thief': 
+        constitution = random.randint(8, 14)
+        print('Your constitution is', constitution)
     else:
-        print('Try again')
-        print(protagonist_class)
+        constitution = random.randint(6, 14)
+        print('Your constitution is', constitution)
+        
+dexterity  = 0; 
+def class_dexterity(dexterity):
+    if prot == 'warrior': 
+        dexterity = random.randint(6, 14)
+        print('Your dexterity is', dexterity)
+    elif prot == 'priest':
+        dexterity = random.randint(6, 12)
+        print('Your dexterity is', dexterity)
+    elif prot == 'thief': 
+        dexterity = random.randint(10, 18)
+        print('Your dexterity is', dexterity)
+    else:
+        dexterity= random.randint(4, 12)
+        print('Your dexterity is', dexterity)
+        
+intelligence  = 0; 
+def class_intelligence(intelligence):
+    if prot == 'warrior': 
+        intelligence = random.randint(4, 12)
+        print('Your intelligence is', intelligence)
+    elif prot == 'priest':
+        intelligence = random.randint(6, 14)
+        print('Your intelligence is', intelligence)
+    elif prot == 'thief': 
+        intelligence = random.randint(8, 16)
+        print('Your intelligence is', intelligence)
+    else:
+        intelligence = random.randint(12, 18)
+        print('Your intelligence is', intelligence)
+        
+hitpoints  = 50;
+def starting_hitpoints(hitpoints):
+    hitpoints == hitpoints + (constitution - 10) * 5
+    print('You have %s hitpoints' % hitpoints)
         
 #main functie toegevoegd. Eigenlijk moet er een main class met een main function. Dan lus van class naar classe en van function naar function.         
-def main():           
-        class_strength(strength)
+def main():          
+        class_strenght(strength)
         class_constitution(constitution)
-
+        class_dexterity(dexterity)
+        class_intelligence(intelligence)
+        starting_hitpoints(hitpoints)
 main()        
         
