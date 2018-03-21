@@ -15,11 +15,9 @@ class CharacterCreation(object):
         protagonist_name = input('What is your name?')
         print('My name is', protagonist_name)
 
-
         time.sleep(1)
         print('Nice to meet you', protagonist_name,'!')
         time.sleep(1)
-
 
         flag = 'no';
         while (flag == 'no'):
@@ -89,13 +87,11 @@ class CharacterCreation(object):
                 print('Your intelligence is', intelligence)
             else:
                 intelligence = random.randint(12, 18)
-                print('Your intelligence is', intelligence)
-        
+                print('Your intelligence is', intelligence)       
 
         def starting_hitpoints(hitpoints):
             self.hitpoints += (self.constitution - 10) * 5
             print('You have %s hitpoints' % hitpoints)
-
 
         def controller(self):
             self.charCreate()
