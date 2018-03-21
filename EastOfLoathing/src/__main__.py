@@ -1,2 +1,7 @@
-# hier komt de start-methode/start-function
+import characterCreation
 
+def main():
+    characterCreation.CharacterCreation().controller()
+  
+if __name__ == "__main__":
+    main()
