@@ -31,16 +31,16 @@ print(flag)
 
 power  = 0; 
 def class_strenght(power):
-    if protagonist_class == 'warrior' or protagonist_class == 'Warrior':
+    if prot == 'warrior': 
         power = random.randint(10, 18)
         print('Your strenght is', power)
-    elif protagonist_class == 'priest' or protagonist_class == 'Priest':
+    elif prot == 'priest':
         power = random.randint(8, 16)
         print('Your strenght is', power)
-    elif protagonist_class == 'thief' or protagonist_class == 'Thief':
+    elif prot == 'thief': 
         power = random.randint(6, 14)
         print('Your strenght is', power)
-    elif protagonist_class == 'mage' or protagonist_class == 'Mage':
+    elif prot == 'mage':
         power = random.randint(4, 12)
         print('Your strenght is', power)
     else:
