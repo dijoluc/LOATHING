@@ -15,12 +15,19 @@ time.sleep(1)
 flag = 'no';
 while (flag == 'no'):
     protagonist_class = input('What class are you? You can choose warrior, priest, mage or thief!')
-    print(flag.lower())  #kleine letter zodat flag werkt bij afwijking. 
-    if(flag != 'warrior' or flag != 'priest' or flag != 'thief'):
+    prot =  protagonist_class.lower()   
+    print(prot)
+                
+    while(prot !='warrior' and prot != 'priest' and prot != 'thief' and prot != 'mage'):
         print('You did not pick a class, please try again') 
         protagonist_class = input('What class are you? You can choose warrior, priest, mage or thief!') 
-    
-    flag = input('are you sure? Yes or No?')
+        prot =  protagonist_class.lower()  
+         
+    flag = input('are you sure? Yes or No?').lower()
+
+#testprint
+print(protagonist_class)
+print(flag)
 
 power  = 0; 
 def class_strenght(power):
