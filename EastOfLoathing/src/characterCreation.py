@@ -93,7 +93,7 @@ class CharacterCreation(object):
         
 
         def starting_hitpoints(hitpoints):
-            hitpoints == hitpoints + (self.constitution - 10) * 5
+            self.hitpoints += (self.constitution - 10) * 5
             print('You have %s hitpoints' % hitpoints)
 
 
