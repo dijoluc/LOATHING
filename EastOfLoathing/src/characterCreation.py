@@ -46,8 +46,8 @@ class CharacterCreation(object):
             strength = random.randint(6, 14)
             print('Your strenght is', strength)
         else:
-                strength = random.randint(4, 12)
-                print('Your strenght is', strength)
+            strength = random.randint(4, 12)
+            print('Your strenght is', strength)
         
     def class_constitution(self):
         
