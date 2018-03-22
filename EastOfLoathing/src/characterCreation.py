@@ -48,6 +48,7 @@ class CharacterCreation(object):
         else:
             strength = random.randint(4, 12)
             print('Your strenght is', strength)
+        self.strenght = strength
         
     def class_constitution(self):
         
@@ -65,6 +66,7 @@ class CharacterCreation(object):
         else:
             constitution = random.randint(6, 14)
             print('Your constitution is', constitution)
+        self.constitution = constitution
         
     def class_dexterity(self):
         
@@ -82,6 +84,7 @@ class CharacterCreation(object):
         else:
             dexterity= random.randint(4, 12)
             print('Your dexterity is', dexterity)
+        self.dexterity = dexterity
         
     def class_intelligence(self):
         prot = self.prot
@@ -97,11 +100,18 @@ class CharacterCreation(object):
             print('Your intelligence is', intelligence)
         else:
             intelligence = random.randint(12, 18)
-            print('Your intelligence is', intelligence)       
+            print('Your intelligence is', intelligence)
+        self.intelligence = intelligence     
 
     def starting_hitpoints(self):
-        self.hitpoints += (self.constitution - 10) * 5
+        constitution = self.constitution
+        self.hitpoints += (constitution - 10) * 5
         print('You have %s hitpoints' % self.hitpoints)
+    
+    #def stats(self, a, b, c, d, e,):
+    #   stats = [4]
+        #stats = ['strenght' : a, b,c,d,e];
+        #print(stats)
 
     def controller(self):
         self.charCreate()
@@ -109,5 +119,6 @@ class CharacterCreation(object):
         self.class_constitution()  
         self.class_dexterity()
         self.class_intelligence()
-                   
-
+        self.starting_hitpoints()
+        #self.stats(self.strenght, self.constitution, self.dexterity, self.intelligence, self.hitpoints)    
+            
